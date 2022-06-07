@@ -1,6 +1,7 @@
-import 'package:altogic_app/app/pages/aut/aut_sing_up/aut_sing_up_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_clean_architecture/flutter_clean_architecture.dart';
+
+import 'aut_sing_up_controller.dart';
 
 class SingUpView extends View {
   @override

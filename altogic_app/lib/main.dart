@@ -1,4 +1,4 @@
-import 'package:altogic_app/app/pages/home/home_view.dart';
+import 'package:altogic_app/src/app/pages/home/home_view.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
