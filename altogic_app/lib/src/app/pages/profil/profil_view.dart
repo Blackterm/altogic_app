@@ -70,7 +70,7 @@ class _ProfilViewState extends ViewState<ProfilView, ProfilController> {
                       ),
                       Container(
                         padding: EdgeInsets.fromLTRB(5, 0, 10, 0),
-                        height: size.height * 0.10,
+                        height: size.height * 0.15,
                         width: size.width,
                         child: ListView(
                           scrollDirection: Axis.horizontal,
@@ -134,7 +134,8 @@ class _ProfilViewState extends ViewState<ProfilView, ProfilController> {
       ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(topRight: Radius.circular(30), topLeft: Radius.circular(30)),
+          borderRadius: BorderRadius.only(
+              topRight: Radius.circular(30), topLeft: Radius.circular(30)),
           boxShadow: [
             BoxShadow(color: Colors.black38, spreadRadius: 0, blurRadius: 10),
           ],
@@ -237,7 +238,9 @@ class InfoBar extends StatelessWidget {
               color: Color(0xffffffff),
             ),
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pop(context);
+              },
               icon: Icon(Icons.arrow_back),
             ),
           ),
@@ -282,12 +285,13 @@ class StatsContainer extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     EdgeInsets padding = MediaQuery.of(context).padding;
     return Padding(
-      padding: EdgeInsets.fromLTRB(padding.left + 15, 0, 0, padding.bottom + 10),
+      padding:
+          EdgeInsets.fromLTRB(padding.left + 15, 0, 0, padding.bottom + 10),
       child: Container(
         height: size.height * 0.15,
         width: size.width * 0.3,
         decoration: BoxDecoration(
-          color: Color(0xfffffffff),
+          color: Color.fromARGB(255, 239, 235, 235),
           borderRadius: BorderRadius.circular(15),
         ),
         child: Column(
@@ -322,7 +326,8 @@ class StatsContainer extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 3),
                   child: Text(
                     departmentName,
-                    style: TextStyle(fontWeight: FontWeight.normal, color: Colors.grey),
+                    style: TextStyle(
+                        fontWeight: FontWeight.normal, color: Colors.grey),
                   ),
                 ),
               ],
@@ -344,14 +349,17 @@ class DepartmentsContainer extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     EdgeInsets padding = MediaQuery.of(context).padding;
     return Padding(
-      padding: EdgeInsets.fromLTRB(padding.left + 15, 0, 0, padding.bottom + 10),
+      padding:
+          EdgeInsets.fromLTRB(padding.left + 15, 0, 0, padding.bottom + 10),
       child: Container(
         height: size.height * 0.15,
         width: size.width * 0.3,
-        decoration:
-            BoxDecoration(color: Color(0xffffffff), borderRadius: BorderRadius.circular(15), boxShadow: [
-          BoxShadow(color: Colors.black38, spreadRadius: 0, blurRadius: 10),
-        ]),
+        decoration: BoxDecoration(
+            color: Color(0xffffffff),
+            borderRadius: BorderRadius.circular(15),
+            boxShadow: [
+              BoxShadow(color: Colors.black38, spreadRadius: 0, blurRadius: 10),
+            ]),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

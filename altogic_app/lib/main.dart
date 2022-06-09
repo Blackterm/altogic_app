@@ -1,3 +1,4 @@
+import 'package:altogic_app/src/app/pages/home/home_view.dart';
 import 'package:flutter/material.dart';
 
 import 'src/app/pages/profil/profil_view.dart';
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Altogic App",
       debugShowCheckedModeBanner: false,
-      home: ProfilView(),
+      home: HomeView(),
     );
   }
 }

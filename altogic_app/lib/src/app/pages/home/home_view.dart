@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_clean_architecture/flutter_clean_architecture.dart';
 
+import '../profil/profil_view.dart';
 import 'home_controller.dart';
 
 class HomeView extends View {
@@ -80,7 +82,7 @@ class _HomeViewState extends ViewState<HomeView, HomeController> {
             ),
             Container(
               height: size.height * 0.4,
-              width: size.width,
+              width: size.width - 15,
               child: ListView.builder(
                 itemCount: 3,
                 scrollDirection: Axis.vertical,
@@ -94,7 +96,8 @@ class _HomeViewState extends ViewState<HomeView, HomeController> {
       ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(topRight: Radius.circular(30), topLeft: Radius.circular(30)),
+          borderRadius: BorderRadius.only(
+              topRight: Radius.circular(30), topLeft: Radius.circular(30)),
           boxShadow: [
             BoxShadow(color: Colors.black38, spreadRadius: 0, blurRadius: 10),
           ],
@@ -211,15 +214,25 @@ class InfoBar extends StatelessWidget {
         ],
       ),
       Spacer(),
-      Container(
-        width: size.width * 0.19,
-        /* height: size.height / 1, */
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15),
-            image: DecorationImage(
-                image: NetworkImage(
-                    "https://randompicturegenerator.com/img/cat-generator/g442aacb7b23e5f83b893bcc0fe86ad125b2426c94ad4ef4f411082593318b19ff9a8f6fae4e524b2dbe7f1b3bb26053b_640.jpg"),
-                fit: BoxFit.fill)),
+      InkWell(
+        onTap: () {
+          Navigator.push(
+            (context),
+            CupertinoPageRoute(
+              builder: (context) => ProfilView(),
+            ),
+          );
+        },
+        child: Container(
+          width: size.width * 0.19,
+          /* height: size.height / 1, */
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15),
+              image: DecorationImage(
+                  image: NetworkImage(
+                      "https://randompicturegenerator.com/img/cat-generator/g442aacb7b23e5f83b893bcc0fe86ad125b2426c94ad4ef4f411082593318b19ff9a8f6fae4e524b2dbe7f1b3bb26053b_640.jpg"),
+                  fit: BoxFit.fill)),
+        ),
       ),
       SizedBox(
         width: 15,
@@ -238,7 +251,8 @@ class DepartmentsContainer extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     EdgeInsets padding = MediaQuery.of(context).padding;
     return Padding(
-      padding: EdgeInsets.fromLTRB(padding.left + 15, 0, 0, padding.bottom + 10),
+      padding:
+          EdgeInsets.fromLTRB(padding.left + 15, 0, 0, padding.bottom + 10),
       child: Container(
         height: size.height * 0.15,
         width: size.width * 0.3,
