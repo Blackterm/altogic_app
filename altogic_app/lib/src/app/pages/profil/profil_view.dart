@@ -132,40 +132,6 @@ class _ProfilViewState extends ViewState<ProfilView, ProfilController> {
           ],
         ),
       ),
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(
-              topRight: Radius.circular(30), topLeft: Radius.circular(30)),
-          boxShadow: [
-            BoxShadow(color: Colors.black38, spreadRadius: 0, blurRadius: 10),
-          ],
-        ),
-        child: ClipRRect(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(25.0),
-            topRight: Radius.circular(25.0),
-          ),
-          child: BottomNavigationBar(
-            unselectedItemColor: Colors.grey[700],
-            selectedItemColor: Colors.white,
-            backgroundColor: Color(0xff202846),
-            items: const <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                label: 'Home',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.business),
-                label: 'Business',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.school),
-                label: 'School',
-              ),
-            ],
-          ),
-        ),
-      ),
     );
   }
 }
@@ -285,8 +251,7 @@ class StatsContainer extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     EdgeInsets padding = MediaQuery.of(context).padding;
     return Padding(
-      padding:
-          EdgeInsets.fromLTRB(padding.left + 15, 0, 0, padding.bottom + 10),
+      padding: EdgeInsets.fromLTRB(padding.left + 15, 0, 0, padding.bottom + 10),
       child: Container(
         height: size.height * 0.15,
         width: size.width * 0.3,
@@ -326,8 +291,7 @@ class StatsContainer extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 3),
                   child: Text(
                     departmentName,
-                    style: TextStyle(
-                        fontWeight: FontWeight.normal, color: Colors.grey),
+                    style: TextStyle(fontWeight: FontWeight.normal, color: Colors.grey),
                   ),
                 ),
               ],
@@ -349,17 +313,14 @@ class DepartmentsContainer extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     EdgeInsets padding = MediaQuery.of(context).padding;
     return Padding(
-      padding:
-          EdgeInsets.fromLTRB(padding.left + 15, 0, 0, padding.bottom + 10),
+      padding: EdgeInsets.fromLTRB(padding.left + 15, 0, 0, padding.bottom + 10),
       child: Container(
         height: size.height * 0.15,
         width: size.width * 0.3,
-        decoration: BoxDecoration(
-            color: Color(0xffffffff),
-            borderRadius: BorderRadius.circular(15),
-            boxShadow: [
-              BoxShadow(color: Colors.black38, spreadRadius: 0, blurRadius: 10),
-            ]),
+        decoration:
+            BoxDecoration(color: Color(0xffffffff), borderRadius: BorderRadius.circular(15), boxShadow: [
+          BoxShadow(color: Colors.black38, spreadRadius: 0, blurRadius: 10),
+        ]),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
